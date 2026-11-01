@@ -1,0 +1,71 @@
+# ============================================
+#                 JalebiRTP config
+# ============================================
+# Use /rtp reload to apply changes.
+
+# Cooldown in seconds (120 = 2 minutes)
+cooldown-seconds: 120
+
+# Each dimension has its own target world.
+# Put ANY world name here, including Multiverse worlds.
+# (If the world name doesn't exist, the plugin falls back to the first
+#  loaded world with the matching dimension type, so it never fails.)
+#
+# radius:     random X/Z within +/- this many blocks of the center
+# center-x/z: center of the random area
+# y:          -1  = top block at the random X/Z (+1)
+#             any other number = fixed Y level used every time
+#
+# NOTE: No safe-spot search is done. You can land in lava, water, caves, etc.
+dimensions:
+  overworld:
+    world: "world"
+    radius: 10000
+    center-x: 0
+    center-z: 0
+    y: -1
+  nether:
+    world: "world_nether"
+    radius: 3000
+    center-x: 0
+    center-z: 0
+    y: 70
+  end:
+    world: "world_the_end"
+    radius: 100      # keep small so you land on the main island
+    center-x: 0
+    center-z: 0
+    y: -1
+
+gui:
+  title: "&6&lJalebiRTP"
+  rows: 3
+  filler: true       # fill empty slots with glass panes
+  overworld:
+    slot: 11
+    material: GRASS_BLOCK
+    name: "&a&lOverworld"
+    lore:
+      - "&7Click to random teleport"
+      - "&7in the Overworld"
+  nether:
+    slot: 13
+    material: NETHERRACK
+    name: "&c&lNether"
+    lore:
+      - "&7Click to random teleport"
+      - "&7in the Nether"
+  end:
+    slot: 15
+    material: END_STONE
+    name: "&5&lThe End"
+    lore:
+      - "&7Click to random teleport"
+      - "&7in the End"
+
+messages:
+  teleported: "&aTeleported!"
+  cooldown: "&cYou must wait &e{time} &cbefore using RTP again."
+  no-permission: "&cYou don't have permission."
+  players-only: "Only players can use this command."
+  reloaded: "&aJalebiRTP config reloaded."

@@ -1,0 +1,23 @@
+name: JalebiRTP
+version: 1.0.0
+main: me.jalebi.rtp.JalebiRTP
+api-version: "1.16"
+author: Jalebi
+description: Random teleport in Overworld, Nether and End. No safe-spot searching, never fails.
+
+commands:
+  rtp:
+    description: Open the JalebiRTP menu
+    usage: /rtp
+    aliases: [randomtp, jalebirtp]
+
+permissions:
+  jalebirtp.use:
+    description: Allows using /rtp
+    default: true
+  jalebirtp.bypass:
+    description: Bypass the RTP cooldown
+    default: op
+  jalebirtp.reload:
+    description: Allows /rtp reload
+    default: op
